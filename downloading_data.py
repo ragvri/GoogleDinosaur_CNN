@@ -39,6 +39,7 @@ def jumping_training_data(key):
 
 i = 1
 
+
 def test_images(key):
     global i
     if key == Key.shift:
