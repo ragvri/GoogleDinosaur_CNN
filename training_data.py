@@ -33,7 +33,7 @@ model.add(Activation('sigmoid'))
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
 
-train_datagen = ImageDataGenerator(rescale=1 / 255, zoom_range=0.2, horizontal_flip=True, shear_range=0.2, )
+train_datagen = ImageDataGenerator(rescale=1 / 255, zoom_range=0.2, horizontal_flip=True, shear_range=0.2,)
 
 train_generator = train_datagen.flow_from_directory(directory="/home/raghav/Dropbox/coding/python/GoogleDinosaur_CNN/"
                                                               "train_data", target_size=(300, 300), class_mode='binary')
@@ -42,7 +42,7 @@ train_generator = train_datagen.flow_from_directory(directory="/home/raghav/Drop
 
 #model.save_weights('first_try.h5')
 model.load_weights('first_try.h5')
-img = load_img("/home/raghav/Dropbox/coding/python/GoogleDinosaur_CNN/test_data/testimage1.jpg")
+img = load_img("/home/raghav/Dropbox/coding/python/GoogleDinosaur_CNN/test_data/no_jump_testimage1.jpg")
 x = img_to_array(img)
 x = np.expand_dims(x, axis=0)
 preds = model.predict_classes(x)
